@@ -49,7 +49,10 @@ const group = ref(0);
           :key="emoji.unicode"
           class="w-10 h-10"
         >
-          <SiEmoji :emoji="emoji.unicode" />
+          <SiEmoji
+            :emoji="emoji.unicode"
+            @click="$emit('select', emoji.unicode)"
+          />
         </div>
       </div>
     </div>

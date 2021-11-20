@@ -7,7 +7,7 @@ export default defineConfig({
   base: "/si-grenoble/",
   build: {
     lib: {
-      entry: path.resolve(__dirname, "lib/main.ts"),
+      entry: path.resolve(__dirname, "lib/main.js"),
       name: "SiGrenoble",
       fileName: (format) => `si-grenoble.${format}.js`
     },

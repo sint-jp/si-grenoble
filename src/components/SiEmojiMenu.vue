@@ -9,9 +9,15 @@ type EmojiGroup = {
   emojiList: Emoji[];
 };
 
+type Emits = {
+  select: (_: string) => void
+}
+
 import { ref } from "@vue/reactivity";
 import json from "../emoji/all.json";
 import SiEmoji from "./SiEmoji.vue";
+
+defineEmits(["select"])
 
 const emojiGroupList: EmojiGroup[] = JSON.parse(JSON.stringify(json));
 const group = ref(0);

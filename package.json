@@ -1,11 +1,23 @@
 {
-  "name": "si-grenoble",
-  "version": "0.0.0",
+  "name": "@si/grenoble",
+  "version": "0.1.0",
   "license": "MIT",
+  "description": "Twemoji Vue Component",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
     "serve": "vite preview"
+  },
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/si-grenoble.umd.js",
+  "module": "./dist/si-grenoble.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/si-grenoble.es.js",
+      "require": "./dist/si-grenoble.umd.js"
+    }
   },
   "dependencies": {
     "twemoji": "^13.1.0",

@@ -20360,6 +20360,7 @@ const _hoisted_1$1 = { class: "bg-gray-50 bg-opacity-25 rounded border py-1 px-2
 const _hoisted_2$1 = { class: "grid grid-cols-10 h-8 p-2 mt-1 mb-4" };
 const _hoisted_3 = { class: "grid grid-cols-8 col-start-1 row-start-1 place-content-start gap-0 justify-items-center items-center h-64 p-1 overflow-y-scroll" };
 const _sfc_main$1 = /* @__PURE__ */ defineComponent({
+  emits: ["select"],
   setup(__props) {
     const emojiGroupList = JSON.parse(JSON.stringify(json));
     const group = ref(0);

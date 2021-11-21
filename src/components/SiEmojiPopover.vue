@@ -3,7 +3,7 @@ type Props = {
   emoji: string;
 };
 
-import { ref } from "@vue/reactivity";
+import { ref } from "vue";
 import SiEmoji from "./SiEmoji.vue";
 import SiEmojiMenu from "./SiEmojiMenu.vue";
 

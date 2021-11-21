@@ -13,7 +13,7 @@ type Emits = {
   select: (_: string) => void
 }
 
-import { ref } from "@vue/reactivity";
+import { ref } from "vue";
 import json from "../emoji/all.json";
 import SiEmoji from "./SiEmoji.vue";
 

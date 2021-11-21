@@ -7,6 +7,7 @@
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",
+    "build:docs": "vue-tsc --noEmit && vite --config vite.docs.config.ts build",
     "serve": "vite preview",
     "prepublish": "yarn build"
   },

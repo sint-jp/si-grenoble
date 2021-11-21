@@ -3,7 +3,7 @@
   "version": "0.1.4",
   "license": "MIT",
   "private": false,
-  "description": "Twemoji Vue Component",
+  "description": "A Simple Twemoji Selector.",
   "scripts": {
     "dev": "vite",
     "build": "vue-tsc --noEmit && vite build",

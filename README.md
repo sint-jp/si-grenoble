@@ -58,7 +58,7 @@ module.exports = {
 
 ```vue
 <script setup lang="ts">
-import SiEmojiPopover from "./components/SiEmojiPopover.vue";
+import { SiEmojiPopover } from "si-grenoble";
 </script>
 
 <template>

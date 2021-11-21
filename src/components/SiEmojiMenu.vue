@@ -1,6 +1,6 @@
 <script setup lang="ts">
 type Emoji = {
-  unicode: string;
+  u: string;
   tags: string[];
 };
 
@@ -30,7 +30,7 @@ const group = ref(0);
         <div v-for="tab in emojiGroupList" :key="tab.group">
           <SiEmoji
             class="w-6 h-6"
-            :emoji="tab.emojiList[0].unicode"
+            :emoji="tab.emojiList[0].u"
             @click="group = tab.group"
           />
         </div>
@@ -52,12 +52,12 @@ const group = ref(0);
       >
         <div
           v-for="emoji in emojiGroupList[group].emojiList"
-          :key="emoji.unicode"
+          :key="emoji.u"
           class="w-10 h-10"
         >
           <SiEmoji
-            :emoji="emoji.unicode"
-            @click="$emit('select', emoji.unicode)"
+            :emoji="emoji.u"
+            @click="$emit('select', emoji.u)"
           />
         </div>
       </div>

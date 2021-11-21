@@ -142,24 +142,30 @@ var twemoji = function() {
     return r.join(sep || "-");
   }
 }();
-const _hoisted_1$2 = { class: "rounded p-1 duration-500 hover:bg-gray-200" };
-const _hoisted_2$2 = ["innerHTML"];
+const _hoisted_1$2 = ["innerHTML"];
 const _sfc_main$2 = /* @__PURE__ */ defineComponent({
   props: {
     class: { default: "w-8 h-8 p-0.5" },
     emoji: { default: "\u2728" }
   },
-  setup(__props) {
+  emits: ["tapped"],
+  setup(__props, { emit: emits }) {
     const getTwemoji = (emoji) => twemoji.parse(emoji, {
       folder: "svg",
       ext: ".svg"
     });
+    const onClick = () => {
+      emits("tapped");
+    };
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("button", _hoisted_1$2, [
+      return openBlock(), createElementBlock("button", {
+        class: "rounded p-1 duration-500 hover:bg-gray-200",
+        onClick
+      }, [
         createElementVNode("div", {
           class: normalizeClass(__props.class),
           innerHTML: getTwemoji(__props.emoji)
-        }, null, 10, _hoisted_2$2)
+        }, null, 10, _hoisted_1$2)
       ]);
     };
   }
@@ -20405,6 +20411,9 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     const props = __props;
     const emoji = ref(props.emoji);
     const popover = ref(false);
+    const onTapped = () => {
+      popover.value = !popover.value;
+    };
     const onSelect = (val) => {
       emoji.value = val;
       popover.value = false;
@@ -20414,7 +20423,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
         createElementVNode("div", null, [
           createVNode(_sfc_main$2, {
             emoji: emoji.value,
-            onClick: _cache[0] || (_cache[0] = ($event) => popover.value = !popover.value)
+            onTapped
           }, null, 8, ["emoji"])
         ]),
         withDirectives(createElementVNode("div", _hoisted_2, [

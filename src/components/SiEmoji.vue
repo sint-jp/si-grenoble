@@ -11,15 +11,21 @@ withDefaults(defineProps<Props>(), {
   emoji: "✨",
 });
 
+const emits = defineEmits(["tapped"]);
+
 const getTwemoji = (emoji: string) =>
   Twemoji.parse(emoji, {
     folder: "svg",
     ext: ".svg",
   });
+
+const onClick = () => {
+  emits("tapped");
+}
 </script>
 
 <template>
-  <button class="rounded p-1 duration-500 hover:bg-gray-200">
+  <button class="rounded p-1 duration-500 hover:bg-gray-200" @click="onClick">
     <div :class="class" v-html="getTwemoji(emoji)" />
   </button>
 </template>

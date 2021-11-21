@@ -14,6 +14,10 @@ const props = withDefaults(defineProps(), {
 const emoji = ref<string>(props.emoji);
 const popover = ref(false);
 
+const onTapped = () => {
+  popover.value = !popover.value;
+}
+
 const onSelect = (val: string) => {
   emoji.value = val;
   popover.value = false;
@@ -23,7 +27,7 @@ const onSelect = (val: string) => {
 <template>
   <div class="flex flex-col">
     <div>
-      <SiEmoji :emoji="emoji" @click="popover = !popover" />
+      <SiEmoji :emoji="emoji" @tapped="onTapped" />
     </div>
 
     <div v-show="popover" class="absolute pt-1 mt-10">

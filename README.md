@@ -1,5 +1,8 @@
 # SI-GRENOBLE
 
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![npm version](https://badge.fury.io/js/si-grenoble.svg)](https://badge.fury.io/js/si-grenoble)
+
 ## INSTALL
 
 ```bash

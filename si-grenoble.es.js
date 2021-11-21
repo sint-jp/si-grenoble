@@ -20426,4 +20426,7 @@ const _sfc_main = /* @__PURE__ */ defineComponent({
     };
   }
 });
-export { _sfc_main$2 as SiEmoji, _sfc_main$1 as SiEmojiMenu, _sfc_main as SiEmojiPopOver };
+const SiEmoji = _sfc_main$2;
+const SiEmojiMenu = _sfc_main$1;
+const SiEmojiPopOver = _sfc_main;
+export { SiEmoji, SiEmojiMenu, SiEmojiPopOver };

@@ -12,7 +12,7 @@ export default defineConfig({
       fileName: (format) => `si-grenoble.${format}.js`
     },
     rollupOptions: {
-      external: ["vue"],
+      external: ["vue", "twemoji"],
       output: {
         globals: {
           vue: "vue"

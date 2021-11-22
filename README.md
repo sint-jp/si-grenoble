@@ -2,6 +2,7 @@
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![npm version](https://badge.fury.io/js/si-grenoble.svg)](https://badge.fury.io/js/si-grenoble)
+[![downloads](https://img.shields.io/npm/dm/si-grenoble.svg)](https://img.shields.io/npm/dm/si-grenoble)
 
 ## INSTALL
 

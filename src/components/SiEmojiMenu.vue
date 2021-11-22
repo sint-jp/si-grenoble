@@ -10,14 +10,14 @@ type EmojiGroup = {
 };
 
 type Emits = {
-  select: (_: string) => void
-}
+  select: (_: string) => void;
+};
 
 import { ref } from "vue";
 import json from "../emoji/all.json";
 import SiEmoji from "./SiEmoji.vue";
 
-defineEmits(["select"])
+defineEmits(["select"]);
 
 const emojiGroupList: EmojiGroup[] = JSON.parse(JSON.stringify(json));
 const group = ref(0);
@@ -26,10 +26,19 @@ const group = ref(0);
 <template>
   <div class="bg-gray-50 bg-opacity-25 rounded border py-1 px-2">
     <div>
-      <div class="grid grid-cols-10 h-8 p-2 mt-1 mb-4">
+      <div
+        class="
+          flex flex-row
+          justify-center
+          align-center
+          p-0.5
+          h-10
+          overflow-x-auto overflow-y-hidden
+        "
+      >
         <div v-for="tab in emojiGroupList" :key="tab.group">
           <SiEmoji
-            class="w-6 h-6"
+            class="w-6 h-6 p-px"
             :emoji="tab.el[0].u"
             @tapped="group = tab.group"
           />
@@ -38,7 +47,8 @@ const group = ref(0);
 
       <div
         class="
-          grid grid-cols-8
+          grid grid-cols-5
+          md:grid-cols-8
           col-start-1
           row-start-1
           place-content-start
@@ -55,10 +65,7 @@ const group = ref(0);
           :key="emoji.u"
           class="w-10 h-10"
         >
-          <SiEmoji
-            :emoji="emoji.u"
-            @click="$emit('select', emoji.u)"
-          />
+          <SiEmoji :emoji="emoji.u" @click="$emit('select', emoji.u)" />
         </div>
       </div>
     </div>

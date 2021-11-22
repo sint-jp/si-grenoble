@@ -19,9 +19,11 @@ module.exports = {
   purge: {
     safelist: [
       "flex",
+      "flex-row",
       "flex-col",
       "absolute",
       "grid",
+      "grid-cols-5",
       "grid-cols-8",
       "grid-cols-10",
       "col-start-1",
@@ -29,6 +31,7 @@ module.exports = {
       "place-content-start",
       "gap-0",
       "justify-items-center",
+      "align-center",
       "items-center",
       "w-6",
       "w-8",
@@ -48,6 +51,8 @@ module.exports = {
       "px-2",
       "rounded",
       "border",
+      "overflow-x-auto",
+      "overflow-y-hidden",
       "overflow-y-scroll",
       "bg-gray-200",
       "bg-gray-50",

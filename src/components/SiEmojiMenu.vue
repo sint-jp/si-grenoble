@@ -6,7 +6,7 @@ type Emoji = {
 
 type EmojiGroup = {
   group: number;
-  emojiList: Emoji[];
+  el: Emoji[];
 };
 
 type Emits = {
@@ -30,7 +30,7 @@ const group = ref(0);
         <div v-for="tab in emojiGroupList" :key="tab.group">
           <SiEmoji
             class="w-6 h-6"
-            :emoji="tab.emojiList[0].u"
+            :emoji="tab.el[0].u"
             @click="group = tab.group"
           />
         </div>
@@ -51,7 +51,7 @@ const group = ref(0);
         "
       >
         <div
-          v-for="emoji in emojiGroupList[group].emojiList"
+          v-for="emoji in emojiGroupList[group].el"
           :key="emoji.u"
           class="w-10 h-10"
         >

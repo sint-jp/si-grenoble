@@ -31,7 +31,7 @@ const group = ref(0);
           <SiEmoji
             class="w-6 h-6"
             :emoji="tab.el[0].u"
-            @click="group = tab.group"
+            @tapped="group = tab.group"
           />
         </div>
       </div>

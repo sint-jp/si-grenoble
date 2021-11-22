@@ -1,7 +1,7 @@
 <script setup lang="ts">
 type Props = {
-  class: string;
-  emoji: string;
+  class?: string;
+  emoji?: string;
 };
 
 import Twemoji from "twemoji";

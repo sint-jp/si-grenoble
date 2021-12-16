@@ -46,6 +46,9 @@ const group = ref(0);
       </div>
 
       <div
+        v-for="(list, index) in emojiGroupList"
+        v-show="index === group"
+        :key="index"
         class="
           grid grid-cols-5
           md:grid-cols-8
@@ -60,11 +63,7 @@ const group = ref(0);
           overflow-y-scroll
         "
       >
-        <div
-          v-for="emoji in emojiGroupList[group].el"
-          :key="emoji.u"
-          class="w-10 h-10"
-        >
+        <div v-for="emoji in list.el" :key="emoji.u" class="w-10 h-10">
           <SiEmoji :emoji="emoji.u" @click="$emit('select', emoji.u)" />
         </div>
       </div>

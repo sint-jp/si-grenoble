@@ -1,31 +1,36 @@
 <script setup lang="ts">
-type Props = {
-  class?: string;
+import { computed, ref } from "vue";
+import { useTwemoji } from "../composables/useTwemoji";
+
+interface SiEmojiProps {
   emoji?: string;
-};
+  size?: string;
+  title?: string;
+}
 
-import Twemoji from "twemoji";
-
-withDefaults(defineProps<Props>(), {
-  class: "w-8 h-8 p-0.5",
+const props = withDefaults(defineProps<SiEmojiProps>(), {
   emoji: "✨",
+  size: "20px",
+  title: ""
 });
 
-const emits = defineEmits(["tapped"]);
-
-const getTwemoji = (emoji: string) =>
-  Twemoji.parse(emoji, {
-    folder: "svg",
-    ext: ".svg",
-  });
-
-const onClick = () => {
-  emits("tapped");
-}
+const width = computed(() => props.size);
+const height = computed(() => props.size);
+const { svg } = useTwemoji({ emoji: props.emoji });
 </script>
 
 <template>
-  <button class="rounded p-1 duration-500 hover:bg-gray-200" @click="onClick">
-    <div :class="class" v-html="getTwemoji(emoji)" />
+  <button
+    class="rounded-lg p-1.5 transition ease-linear duration-300 hover:shadow active:shadow-inner"
+    :title="title"
+  >
+    <div class="si-emoji" v-html="svg" />
   </button>
 </template>
+
+<style scoped>
+.si-emoji {
+  width: v-bind(width);
+  height: v-bind(height);
+}
+</style>

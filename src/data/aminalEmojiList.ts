@@ -1,4 +1,4 @@
-export const animalAndNatureEmojiList = [
+export const animalEmojiList = [
   { code: "🐵", words: ["サル", "動物", "猿", "顔"] },
   { code: "🐒", words: ["動物", "猿"] },
   { code: "🦍", words: ["動物", "顔"] },

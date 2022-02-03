@@ -21,7 +21,7 @@ const { svg } = useTwemoji({ emoji: props.emoji });
 
 <template>
   <button
-    class="rounded-lg p-1.5 transition ease-linear duration-300 hover:shadow active:shadow-inner"
+    class="rounded-lg p-1.5 transition ease-linear duration-300 hover:shadow active:shadow-inner hover:bg-neutral-100"
     :title="title"
   >
     <div class="si-emoji" v-html="svg" />

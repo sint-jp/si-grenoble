@@ -1,6 +1,7 @@
 <script setup lang="ts">
 import { peopleEmojiList } from "../data/peopleEmojiList";
-import { animalAndNatureEmojiList } from "../data/animalAndNatureEmojiList";
+import { animalEmojiList } from "../data/aminalEmojiList";
+import { foodEmojiList } from "../data/foodEmojiList";
 
 import SiEmoji from "./SiEmoji.vue";
 </script>
@@ -11,7 +12,7 @@ import SiEmoji from "./SiEmoji.vue";
   >
     <label class="w-full grow-0 px-2 pt-0.5 pb-1.5">
       <input
-        class="w-full border text-sm rounded-full px-2 py-0.5 bg-slate-50 focus:outline-none focus:ring transition duration-300 ease-linear font-semibold"
+        class="w-full border text-sm rounded-full px-2 py-0.5 bg-slate-50 focus:outline-none focus:ring-2 transition duration-300 ease-linear font-semibold"
       />
     </label>
 
@@ -30,7 +31,18 @@ import SiEmoji from "./SiEmoji.vue";
       <div class="px-1 py-0.5 text-xs font-medium">Animals & Nature</div>
       <div class="grid grid-cols-6 gap-px px-0.5">
         <SiEmoji
-          v-for="emoji in animalAndNatureEmojiList"
+          v-for="emoji in animalEmojiList"
+          :key="emoji.code"
+          :emoji="emoji.code"
+          :title="emoji.words.join(', ')"
+          size="25px"
+        />
+      </div>
+
+      <div class="px-1 py-0.5 text-xs font-medium">Food & Drink</div>
+      <div class="grid grid-cols-6 gap-px px-0.5">
+        <SiEmoji
+          v-for="emoji in foodEmojiList"
           :key="emoji.code"
           :emoji="emoji.code"
           :title="emoji.words.join(', ')"

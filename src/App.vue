@@ -1,9 +1,12 @@
 <script setup lang="ts">
-import SiEmojiMenu from "./components/SiEmojiMenu.vue";
+import { ref } from "vue";
+import SiEmojiCard from "./components/SiEmojiCard.vue";
+
+const emoji = ref("✨");
 </script>
 
 <template>
   <div class="h-screen flex justify-center items-center">
-    <SiEmojiMenu />
+    <SiEmojiCard v-model="emoji" />
   </div>
 </template>

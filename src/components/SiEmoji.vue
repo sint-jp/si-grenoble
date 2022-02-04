@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { computed, ref } from "vue";
-import { useTwemoji } from "../composables/useTwemoji";
+import twemoji from "twemoji";
 
 interface SiEmojiProps {
   emoji?: string;
@@ -16,12 +16,13 @@ const props = withDefaults(defineProps<SiEmojiProps>(), {
 
 const width = computed(() => props.size);
 const height = computed(() => props.size);
-const { svg } = useTwemoji({ emoji: props.emoji });
+const options = { folder: "svg", ext: ".svg" };
+const svg = computed(() => twemoji.parse(props.emoji, options));
 </script>
 
 <template>
   <button
-    class="rounded-lg p-1.5 transition ease-linear duration-300 hover:shadow active:shadow-inner hover:bg-neutral-100"
+    class="flex justify-center items-center rounded-lg p-1.5 transition ease-linear duration-300 hover:shadow active:shadow-inner hover:bg-stone-100"
     :title="title"
   >
     <div class="si-emoji" v-html="svg" />

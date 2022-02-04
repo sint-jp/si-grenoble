@@ -1,4 +1,4 @@
-export const foodEmojiList = [
+export const foods = [
   { code: "🍇", words: ["グレープ", "果物"] },
   { code: "🍈", words: ["果物", "野菜"] },
   { code: "🍉", words: ["果物", "野菜"] },
